@@ -18,12 +18,7 @@ public class Main {
 
 
 
-        valkyries.sort(new Comparator<Person>() {
-            @Override
-            public int compare(Person o1, Person o2) {
-                return o1.getSurname().length() - o2.getSurname().length();
-            }
-        });
+        valkyries.removeIf(q->q.getAge() < 18);
 
 
         System.out.println(valkyries);
