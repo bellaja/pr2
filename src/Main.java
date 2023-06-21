@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -15,7 +16,16 @@ public class Main {
         valkyries.add(new Person("Theresa", "Apocalypse", 44));
         valkyries.add(new Person("Fu", "Hua", 50000));
 
-        Collections.sort(valkyries, new ComparatorClass());
+
+
+        valkyries.sort(new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o1.getSurname().length() - o2.getSurname().length();
+            }
+        });
+
+
         System.out.println(valkyries);
     }
 }
