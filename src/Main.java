@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -15,7 +16,11 @@ public class Main {
         valkyries.add(new Person("Theresa", "Apocalypse", 44));
         valkyries.add(new Person("Fu", "Hua", 50000));
 
-        Collections.sort(valkyries, new ComparatorClass());
+
+
+        valkyries.removeIf(q->q.getAge() < 18);
+
+
         System.out.println(valkyries);
     }
 }
